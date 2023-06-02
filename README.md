@@ -1,19 +1,19 @@
-1. clone application
+## Project Description
 
-2. create virtual enviroment -> virtualenv [env_name]
+## Environment Configure 
+- Installing virtual Env
+    - pip install pipenv 
 
-3. install requirements -> pip3 install -r requirements.txt
+- Installing Packages
+    - pipenv install 
 
-4. setup database connection in database.py -> default create sqlite db(sql_app.db)
+- Starting Virtual Env
+    - pipenv shell 
 
-5. setup mailtrap connection in main.py -> change the email details to your account
+- Running FastAPI Service Locally 
+    - uvicorn app.main:app --reload
 
-6. run application with uvicorn app.main:api --reload [debug mode]
-
-
-7. access swagger UI at localhost/api/docs 
-
-6. \__(*_*)__/
-      /   \
-      
-    
+- Running FastAPI Service On Docker 
+    - Start Docker Service 
+    - docker-compose build
+    - docker-compose up -d
