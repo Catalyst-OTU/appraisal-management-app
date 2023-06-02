@@ -2,11 +2,11 @@
 ## importing libraries
 from fastapi import FastAPI
 #from api_routes.base import api_router
-from core.config import settings
-from db.session import engine 
+from app.core.config import settings
+from app.db.session import engine 
 from db.base_class import Base 
 
-from apis.base import api_router
+from app.apis.base import api_router
 
 ## adding our api routes 
 def include_router(app):
