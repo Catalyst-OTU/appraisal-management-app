@@ -4,8 +4,7 @@ from sqlalchemy.orm import Session
 from app.routers.staffs.schemas import CreateStaff,UpdateStaff
 from app.routers.users.models import User
 from app.routers.staffs.models import Staff
-from mail.sendmail import sendEmailToNewStaff
-
+from app.services.email import sendEmailToNewStaff
 
 
 async def create_new_satff(staff:CreateStaff, db:Session):
