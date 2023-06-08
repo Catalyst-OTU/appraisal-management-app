@@ -1,4 +1,5 @@
-from .account.main import router as account
+from .account.main import user_acc_router
+from .user_type.main import usertype_router
 # from .account.models import User, Administrator
 
 # from .auth.main import router as auth
