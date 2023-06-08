@@ -39,6 +39,7 @@ def get_db_2():
 #     if x_key != settings.API_KEY:
 #         raise HTTPException(status_code=400, detail="X-Key header invalid")
 #     return x_key
+
 oauth2_scheme = ''
 async def validate_bearer(token:str=Depends(oauth2_scheme), db=Depends(get_db)):
     from routers.user.auth.crud import is_token_blacklisted
