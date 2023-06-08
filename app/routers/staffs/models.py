@@ -1,10 +1,13 @@
 from sqlalchemy import Column,Integer, String,Boolean, ForeignKey,Date,TIMESTAMP,text
 from sqlalchemy.orm import relationship
 
-from app.db.base_class import Base
+from database import Base
 
 
 class Staff(Base):
+    '''Staff Model'''
+    
+    __tablename__ = "staff"
     staff_id = Column(Integer,primary_key=True,index=True)
     first_name = Column(String, nullable=True)
     last_name = Column(String, nullable=True)

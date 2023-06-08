@@ -18,7 +18,6 @@ class CreateStaff(BaseModel):
         orm_model = True
 
 
-
 class UpdateStaff(BaseModel):
     staff_id:Optional[int]
     first_name: Optional[str]

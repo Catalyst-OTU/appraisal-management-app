@@ -1,10 +1,10 @@
 from fastapi.exceptions import HTTPException
 from fastapi import status
 from sqlalchemy.orm import Session
-from app.routers.staffs.schemas import CreateStaff,UpdateStaff
-from app.routers.users.models import User
-from app.routers.staffs.models import Staff
-from app.services.email import sendEmailToNewStaff
+from routers.staffs.schemas import CreateStaff,UpdateStaff
+from routers.users.account.models import User
+from routers.staffs.models import Staff
+from services.email import sendEmailToNewStaff
 
 
 async def create_new_satff(staff:CreateStaff, db:Session):
