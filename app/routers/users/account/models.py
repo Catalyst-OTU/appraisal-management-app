@@ -10,18 +10,22 @@ import re, uuid
 #class User(BaseMixin, HashMethodMixin, Base)
 class User(Base):
     '''User Model'''
-    __tablename__ = "users"
 
+    __tablename__ = "users"
     user_id =Column(Integer,primary_key=True,index=True)  
     email = Column(String, unique=True, index=True)
     hashed_password = Column(String,nullable=False)
     is_active = Column(Boolean, default=False)
+    staff_id = Column(Integer, ForeignKey("staff.staff_id"))
+    user_type_id = Column(Integer, ForeignKey("user_type.id"))
+    department_type_id = Column(Integer, ForeignKey("department_type.id"))
     create_at = Column(Date)
     updated_at = Column(Date)
     reset_password_token = Column(String, nullable=True) 
+    satff = relationship("Staff", back_populates="staff")
+    department_type = relationship('DepartmentType', back_populates="department_type")
+    user_type = relationship("UserType", back_populates="user_type")
     
-
-
     @validates('password', include_removes=True)
     def validate_password(self, key, value, is_remove):
         assert len(value) > 7, 'unacceptable password length'
@@ -66,3 +70,5 @@ class Administrator(Base):
     
     status = None
 
+
+    
