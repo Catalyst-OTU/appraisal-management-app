@@ -3,8 +3,8 @@ from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 from pydantic import BaseModel, EmailStr
 from starlette.responses import JSONResponse
 from dotenv  import dotenv_values
-from app.core.config import settings
-from app.routers.staffs.models import Staff
+from config import settings
+from routers.staffs.models import Staff
 
 
 
@@ -14,7 +14,6 @@ config_credentials = dotenv_values(".env")
 
 class EmailSchema(BaseModel):
     email: List[EmailStr]
-
 
 
 conf = ConnectionConfig(
